@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>DOM Interaction</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1 v-once>{{ title }}</h1>
+            <p>{{ sayHello() }}</p>
+            <!-- binding data -->
+            <a v-bind:href="link">Google</a>
+            <hr>
+            <p v-html="finishedLink"></p>
+        </div> 
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    title: 'Hello World!!',
+                    link: 'https://www.google.co.in',
+                    finishedLink: '<a href="https://www.google.co.in">Google</a>'
+                },
+                methods:{
+                    sayHello: function(){
+                        this.title = "Hello "
+                        return this.title;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
