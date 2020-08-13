@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <title>ShortHand In Vuejs</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-on: => @ -->
+            <button @click="changeLink">Click to Change Link</button>
+            <!-- v-bind: => : -->
+            <a :href="link">Link</a>
+        </div> 
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    link: 'https://www.google.co.in'
+                },
+                methods:{
+                    changeLink: function(){
+                        this.link = "https://www.google.com"
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
